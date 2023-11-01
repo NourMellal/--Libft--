@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 18:24:43 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/01 11:33:00 by nmellal          ###   ########.fr       */
+/*   Created: 2023/10/31 17:32:28 by nmellal           #+#    #+#             */
+/*   Updated: 2023/11/01 11:28:59 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+int	ft_lstsize(t_list *lst)
 {
-	char	*res;
-	size_t	i;
+	int	size;
 
-	res = malloc(sizeof(char) * size);
-	if (!res)
-		return (NULL);
-	i = 0;
-	while (i < size)
+	size = 0;
+	while (lst)
 	{
-		res[i] = '\0';
-		i++;
+		size++;
+		lst = lst->next;
 	}
-	return (res);
+	return (size);
 }

@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 18:24:43 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/01 11:33:00 by nmellal          ###   ########.fr       */
+/*   Created: 2023/10/31 17:38:40 by nmellal           #+#    #+#             */
+/*   Updated: 2023/10/31 17:46:34 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	*res;
-	size_t	i;
-
-	res = malloc(sizeof(char) * size);
-	if (!res)
-		return (NULL);
-	i = 0;
-	while (i < size)
-	{
-		res[i] = '\0';
-		i++;
-	}
-	return (res);
+	while (lst && lst->next)
+		lst = lst->next;
+	return (lst);
 }

@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 18:24:43 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/01 11:33:00 by nmellal          ###   ########.fr       */
+/*   Created: 2023/10/31 16:57:27 by nmellal           #+#    #+#             */
+/*   Updated: 2023/11/01 11:30:07 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+t_list	*ft_lstnew(void *content)
 {
-	char	*res;
-	size_t	i;
+	t_list	*newnode;
 
-	res = malloc(sizeof(char) * size);
-	if (!res)
+	newnode = malloc(sizeof(t_list));
+	if (!newnode)
 		return (NULL);
-	i = 0;
-	while (i < size)
-	{
-		res[i] = '\0';
-		i++;
-	}
-	return (res);
+	newnode->content = content;
+	newnode->next = NULL;
+	return (newnode);
 }

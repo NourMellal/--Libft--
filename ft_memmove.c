@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 01:17:51 by nmellal           #+#    #+#             */
-/*   Updated: 2023/10/14 16:53:03 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/10/31 21:38:59 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		tmp[n] = tmp2[n];
 	return (dest);
 }
+
+/* {1, 2, 3, 4, 5, 6}
+	dest = 0x00650
+	src = 0x00550
+   dest = &arr[6], src = &arr[0] */
 
 // int	main(void)
 // {
