@@ -33,7 +33,7 @@ bonus:
 	ar rcs ${NAME} ${OBJS_BONUS}
 
 clean:
-	rm -rf ${OBJS}
+	rm -rf ${OBJS} ${OBJS_BONUS}
 
 fclean: clean
 	rm -rf ${NAME}
