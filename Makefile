@@ -6,7 +6,13 @@ ft_isascii.c  ft_memcpy.c    ft_putendl_fd.c  ft_strclr.c     ft_striteri.c  ft_
 ft_isdigit.c  ft_memdel.c    ft_putnbr.c      ft_strcmp.c     ft_strjoin.c   ft_strncpy.c  ft_strsub.c\
 ft_isprint.c  ft_memmove.c   ft_putnbr_fd.c   ft_strcpy.c     ft_strlcat.c   ft_strnequ.c  ft_strtrim.c
 
+SRC_BONUS = ft_lstadd_back.c   ft_lstdelone.c  ft_lstmap.c\
+ft_lstadd_front.c  ft_lstiter.c    ft_lstnew.c\
+ft_lstclear.c      ft_lstlast.c    ft_lstsize.c
+
 OBJS =	${SRC:.c=.o}
+OBJS_BONUS =	${SRC_BONUS:.c=.o}
+
 
 CC =	gcc
 
@@ -22,6 +28,10 @@ ${NAME}:
 		${CC} ${CFLAGS} -c ${SRC}
 		ar rcs ${NAME} ${OBJS}
 
+bonus:
+	${CC} ${CFLAGS} -c ${SRC_BONUS}
+	ar rcs ${NAME} ${OBJS_BONUS}
+
 clean:
 	rm -rf ${OBJS}
 
@@ -30,4 +40,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean
+.PHONY: all clean fclean bonus
