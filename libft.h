@@ -6,17 +6,14 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 18:50:08 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/02 18:07:50 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/02 19:01:30 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
-# include <strings.h>
 # include <unistd.h>
 
 /* Bonus Part */
