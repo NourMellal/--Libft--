@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:24:24 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/01 11:28:07 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/02 14:40:56 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,45 @@ static int	whitespace(int c, char const *set)
 		set++;
 	}
 	return (0);
+}
+
+static char	*ft_strnew(size_t size)
+{
+	char	*res;
+	size_t	i;
+
+	res = malloc(sizeof(char) * size);
+	if (!res)
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		res[i] = '\0';
+		i++;
+	}
+	return (res);
+}
+
+static char	*ft_strncpy(char *dst, const char *src, size_t len)
+{
+	size_t	a;
+	size_t	b;
+
+	a = 0;
+	b = len;
+	while (a != len && src[a] != '\0')
+	{
+		dst[a] = src[a];
+		a++;
+		b--;
+	}
+	while (b != 0)
+	{
+		dst[a] = '\0';
+		a++;
+		b--;
+	}
+	return (dst);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)

@@ -16,7 +16,7 @@
 // {
 // 	int *n = malloc(sizeof(int));
 // 	*n = 2 * (*(int *)cont);
-// 	return n;
+// 	return (n);
 // }
 
 // void	free_cont(void	*cont)
@@ -73,5 +73,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 // 	ft_lstclear(&head, free_cont);
 // 	ft_lstclear(&new_list, real_free);
 
-// 	return 0;
+// 	return (0);
 // }

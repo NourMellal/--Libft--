@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:10:14 by nmellal           #+#    #+#             */
-/*   Updated: 2023/10/30 18:45:57 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/02 14:33:43 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,23 @@ static int	numlen(long n)
 		n /= 10;
 	}
 	return (i);
+}
+
+static char	*ft_strnew(size_t size)
+{
+	char	*res;
+	size_t	i;
+
+	res = malloc(sizeof(char) * size);
+	if (!res)
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		res[i] = '\0';
+		i++;
+	}
+	return (res);
 }
 
 static char	*res_define(char *res, int len, long n)
