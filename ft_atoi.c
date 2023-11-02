@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 14:33:44 by prossi            #+#    #+#             */
-/*   Updated: 2023/10/18 19:39:12 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/02 17:50:05 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_atoi(const char *str)
 	int	neg;
 	int	res;
 
+	if (!str)
+		return (0);
 	i = 0;
 	neg = 1;
 	res = 0;
@@ -39,5 +41,6 @@ int	ft_atoi(const char *str)
 
 // int	main(void)
 // {
-// 	int n = atoi("4589");
+// 	int n = ft_atoi(NULL);
+// 	printf("%d\n", n);
 // }

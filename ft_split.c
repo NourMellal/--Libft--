@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 23:13:43 by nmellal           #+#    #+#             */
-/*   Updated: 2023/10/30 20:35:04 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/02 18:49:04 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ char	**ft_split(char const *s, char c)
 	char	**res;
 	int		words;
 
+	if (!s)
+		return (NULL);
 	words = count_words(s, c);
 	res = malloc((sizeof(char *) * words) + 1);
 	if (!res)

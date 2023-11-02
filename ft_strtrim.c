@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:24:24 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/02 14:40:56 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/02 18:59:01 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	char	*res;
 
+	if (!s1 || !set)
+		return (NULL);
 	end = ft_strlen(s1) - 1;
 	if (!s1)
 		return (NULL);

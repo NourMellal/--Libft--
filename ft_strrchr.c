@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 02:31:49 by nmellal           #+#    #+#             */
-/*   Updated: 2023/10/15 02:45:56 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/02 18:58:15 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strrchr(const char *s, int c)
 	char	*tmp;
 	char	*last;
 
+	if (!s)
+		return (NULL);
 	i = -1;
 	tmp = (char *)s;
 	last = NULL;
