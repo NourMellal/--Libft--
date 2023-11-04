@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 12:21:40 by fpetras           #+#    #+#             */
-/*   Updated: 2023/11/04 16:31:15 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/04 16:43:24 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*res;
 
-	if (count && 18446744073709551615 / count < size)
+	if (count && (~((size_t)0)) / count < size)
 		return (NULL);
 	res = malloc(size * count);
 	if (!res)
