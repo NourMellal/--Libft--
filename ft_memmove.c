@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 01:17:51 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/02 18:18:21 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/04 16:53:05 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const unsigned char	*tmp2;
 
 	if (!dest || !src)
-		return (NULL);
+		return (dest);
 	tmp = (unsigned char *)dest;
 	tmp2 = (const unsigned char *)src;
+	if (tmp == tmp2)
+		return (dest);
 	if (dest < src)
 		return (ft_memcpy(dest, src, n));
 	while (n--)
