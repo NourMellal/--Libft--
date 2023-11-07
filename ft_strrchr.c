@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 02:31:49 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/02 18:58:15 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/06 18:19:29 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,22 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*tmp;
-	char	*last;
+	int				i;
+	unsigned char	char_to_find;
+	char			*last_occurrence;
 
-	if (!s)
-		return (NULL);
-	i = -1;
-	tmp = (char *)s;
-	last = NULL;
-	while (tmp[++i])
+	last_occurrence = NULL;
+	char_to_find = (unsigned char)c;
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if (tmp[i] == c)
-			last = &tmp[i];
+		if (s[i] == char_to_find)
+			last_occurrence = (char *)&s[i];
+		i++;
 	}
-	if (c == '\0')
-		return (&tmp[i]);
-	return (last);
+	if (char_to_find == '\0')
+		return ((char *)&s[i]);
+	return (last_occurrence);
 }
 
 // int main(void)

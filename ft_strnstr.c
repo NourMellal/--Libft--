@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 19:03:03 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/02 18:57:47 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/06 22:06:12 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	size_t	i;
 	size_t	j;
 
-	if (!haystack || !needle)
+	if (!needle)
+		return ((char *)haystack);
+	if (!haystack)
 		return (NULL);
 	if (*needle == '\0')
 		return ((char *)haystack);
@@ -25,10 +27,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	while (haystack[i] && i < n)
 	{
 		j = 0;
-		while (haystack[i + j] == needle[j] && i + j < n)
+		while (haystack[i + j] && haystack[i + j] == needle[j] && i + j < n)
+		{
+			if (needle[j + 1] == '\0')
+				return ((char *)haystack + i);
 			j++;
-		if (needle[j] == '\0')
-			return ((char *)haystack + i);
+		}
 		i++;
 	}
 	return (0);
@@ -36,10 +40,15 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 
 // int	main(void)
 // {
-// 	char *tmp = ft_strnstr("oussama msha l7amam", "Z", 50);
+// 	#include <stdio.h>
+// 	#include <string.h>
+
+// 	char *tmp = ft_strnstr("Hhh", NULL, 50);
 // 	if (!tmp)
 // 		printf("mal9it walo\n");
 // 	else
+// 	{
 // 		printf("%s\n", tmp);
+// 	}
 // 	return (0);
 // }

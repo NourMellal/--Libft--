@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:52:50 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/02 14:42:11 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/06 22:32:14 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,32 @@
 static char	*ft_strnew(size_t size)
 {
 	char	*res;
-	size_t	i;
 
-	res = malloc(sizeof(char) * size);
+	res = malloc(sizeof(char) * size + 1);
 	if (!res)
 		return (NULL);
-	i = 0;
-	while (i < size)
-	{
-		res[i] = '\0';
-		i++;
-	}
+	ft_bzero(res, size + 1);
 	return (res);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
-	char			*res;
+	size_t	i;
+	char	*res;
+	size_t	sublen;
 
+	if (!s)
+		return (NULL);
+	sublen = ft_strlen(s);
+	if (start >= sublen)
+		return (ft_strnew(0));
+	if (len > sublen - start)
+		len = sublen - start;
 	res = ft_strnew(len);
-	if (!res || !s)
+	if (!res)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while (i < len && s[start + i])
 	{
 		res[i] = s[start + i];
 		i++;

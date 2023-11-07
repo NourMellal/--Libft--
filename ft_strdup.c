@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 14:37:12 by prossi            #+#    #+#             */
-/*   Updated: 2023/11/02 18:47:11 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/06 22:10:51 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strdup(const char *s)
 	i = 0;
 	j = ft_strlen(s);
 	str = (char *)malloc(sizeof(*str) * (j + 1));
+	if (!str)
+		return (NULL);
 	while (i < j)
 	{
 		str[i] = s[i];

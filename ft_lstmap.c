@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:50:22 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/01 12:40:25 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/07 00:12:44 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,34 @@
 // 	free(cnt);
 // }
 
+static void	cleanup_on_fail(t_list **new_list, void *content,
+		void (*del)(void *))
+{
+	if (content)
+		del(content);
+	if (new_list)
+		ft_lstclear(new_list, del);
+}
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	void	*content;
 	t_list	*new_list;
 	t_list	*new_node;
 
-	if (!lst || !f || !del)
-		return (NULL);
 	new_list = NULL;
-	while (lst)
+	while (lst && f && del)
 	{
 		content = f(lst->content);
+		if (!content)
+		{
+			cleanup_on_fail(&new_list, NULL, del);
+			return (NULL);
+		}
 		new_node = ft_lstnew(content);
 		if (!new_node)
 		{
-			ft_lstclear(&new_list, del);
+			cleanup_on_fail(&new_list, content, del);
 			return (NULL);
 		}
 		ft_lstadd_back(&new_list, new_node);

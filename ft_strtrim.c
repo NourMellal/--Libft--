@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:24:24 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/02 18:59:01 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/06 22:51:47 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,11 @@ static int	whitespace(int c, char const *set)
 static char	*ft_strnew(size_t size)
 {
 	char	*res;
-	size_t	i;
 
-	res = malloc(sizeof(char) * size);
+	res = malloc(sizeof(char) * size + 1);
 	if (!res)
 		return (NULL);
-	i = 0;
-	while (i < size)
-	{
-		res[i] = '\0';
-		i++;
-	}
+	ft_bzero(res, size + 1);
 	return (res);
 }
 
@@ -70,22 +64,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
-	end = ft_strlen(s1) - 1;
-	if (!s1)
-		return (NULL);
-	if (end < 0)
-		return (ft_strnew(1));
+	end = ft_strlen(s1);
+	if (end == 0)
+		return (ft_strnew(0));
 	start = 0;
-	while (whitespace(s1[start], set))
+	while (s1[start] && whitespace(s1[start], set))
 		start++;
-	if (start - 1 == end)
-		return (ft_strnew(1));
-	while (whitespace(s1[end], set))
+	while (end > start && whitespace(s1[end - 1], set))
 		end--;
-	res = ft_strnew(end - start + 1);
+	res = ft_strnew((size_t)(end - start));
 	if (!res)
 		return (NULL);
-	return (ft_strncpy(res, &s1[start], end - start + 1));
+	return (ft_strncpy(res, &s1[start], (size_t)(end - start)));
 }
 
 // int	main(int ac, char **av)

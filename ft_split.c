@@ -5,21 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 23:13:43 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/02 18:49:04 by nmellal          ###   ########.fr       */
+/*   Created: 2023/11/06 22:55:36 by nmellal           #+#    #+#             */
+/*   Updated: 2023/11/06 23:01:13 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_sep(int c, int sep)
-{
-	if (c == sep || c == '\0')
-		return (1);
-	return (0);
-}
-
-static int	count_words(const char *str, int c)
+static int	count_words(const char *str, char sep)
 {
 	int	i;
 	int	words;
@@ -28,25 +21,43 @@ static int	count_words(const char *str, int c)
 	words = 0;
 	while (str[i])
 	{
-		if (!is_sep(str[i], c) && is_sep(str[i + 1], c))
+		if ((str[i] != sep && str[i] != '\0')
+			&& (str[i + 1] == sep || str[i + 1] == '\0'))
 			words++;
 		i++;
 	}
 	return (words);
 }
 
-static char	*res_write(char *dest, const char *src, char c)
+static char	*res_write(char *dest, const char *src, char sep)
 {
 	int	i;
 
 	i = -1;
-	while (!is_sep(src[++i], c))
+	while (!(src[++i] == sep || src[i] == '\0'))
 		dest[i] = src[i];
 	dest[i] = '\0';
 	return (dest);
 }
 
-static char	**res_define(char **res, const char *str, char c)
+static char	**free_res(char **res)
+{
+	int	i;
+
+	if (res != NULL)
+	{
+		i = 0;
+		while (res[i])
+		{
+			free(res[i]);
+			i++;
+		}
+		free(res);
+	}
+	return (NULL);
+}
+
+static char	**res_define(char **res, const char *str, char sep)
 {
 	int	i;
 	int	j;
@@ -56,17 +67,17 @@ static char	**res_define(char **res, const char *str, char c)
 	word = 0;
 	while (str[i])
 	{
-		if (is_sep(str[i], c))
+		if (str[i] == sep)
 			i++;
 		else
 		{
 			j = 0;
-			while (!is_sep(str[i + j], c))
+			while (!(str[i + j] == sep || str[i + j] == '\0'))
 				j++;
 			res[word] = malloc((sizeof(char) * j) + 1);
 			if (!res[word])
-				return (NULL);
-			res_write(res[word], str + i, c);
+				return (free_res(res));
+			res_write(res[word], str + i, sep);
 			i += j;
 			word++;
 		}
@@ -82,19 +93,9 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = count_words(s, c);
-	res = malloc((sizeof(char *) * words) + 1);
+	res = malloc((sizeof(char *) * (words + 1)));
 	if (!res)
 		return (NULL);
 	res[words] = NULL;
 	return (res_define(res, s, c));
 }
-// int main(void)
-// {
-// 	char	**res = ft_strsplit(",,,,,,,,,,hello         world,,,,,,,", ' ');
-// 	for (int i = 0; res[i]; i++)
-// 		printf("%s\n", res[i]);
-// 	for (int i = 0; res[i]; i++)
-// 		free(res[i]);
-// 	free(res);
-// 	return (0);
-// }

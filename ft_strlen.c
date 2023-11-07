@@ -6,15 +6,15 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 14:38:06 by prossi            #+#    #+#             */
-/*   Updated: 2023/11/02 18:52:33 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/06 22:26:56 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	if (!str)
 		return (0);

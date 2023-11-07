@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:10:14 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/02 14:33:43 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/06 23:35:02 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static int	numlen(long n)
 {
 	int	i;
 
-	i = 1;
-	if (n < 0)
+	i = 0;
+	if (n <= 0)
 	{
 		n = -n;
 		i++;
@@ -33,38 +33,32 @@ static int	numlen(long n)
 static char	*ft_strnew(size_t size)
 {
 	char	*res;
-	size_t	i;
 
 	res = malloc(sizeof(char) * size);
 	if (!res)
 		return (NULL);
-	i = 0;
-	while (i < size)
-	{
-		res[i] = '\0';
-		i++;
-	}
+	ft_bzero(res, size);
 	return (res);
 }
 
 static char	*res_define(char *res, int len, long n)
 {
-	int	i;
-
-	i = 0;
-	res[len--] = '\0';
+	if (n == 0)
+	{
+		res[0] = '0';
+		return (res);
+	}
+	res[--len] = '\0';
 	if (n < 0)
 	{
-		res[i++] = '-';
+		res[0] = '-';
 		n = -n;
 	}
-	while (n > 9)
+	while (n > 0)
 	{
-		res[len] = n % 10 + 48;
+		res[len--] = n % 10 + 48;
 		n /= 10;
-		len--;
 	}
-	res[len] = n + 48;
 	return (res);
 }
 
@@ -81,8 +75,10 @@ char	*ft_itoa(int n)
 		return (NULL);
 	return (res_define(res, len, num));
 }
+
 // int main(int argc, char const *argv[])
 // {
+// 	#include <stdio.h>
 // 	(void)argc;
 // 	char *tmp = ft_itoa(atoi(argv[1]));
 // 	printf("%s\n", tmp);
