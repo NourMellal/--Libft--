@@ -6,7 +6,7 @@
 /*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 14:33:44 by prossi            #+#    #+#             */
-/*   Updated: 2023/11/02 17:50:05 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/07 22:32:58 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ int	ft_atoi(const char *str)
 
 // int	main(void)
 // {
-// 	int n = ft_atoi(NULL);
+// 	#include <stdio.h>
+// 	#include <limits.h>
+// 	int n = ft_atoi("-2147483649");
+// 	int n2 = atoi("-2147483649");
 // 	printf("%d\n", n);
+// 	printf("%d\n", n2);
 // }
