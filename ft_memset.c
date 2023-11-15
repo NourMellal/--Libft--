@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 02:58:27 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/02 18:20:59 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/14 18:39:57 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memset(void *s, int c, size_t n)
 {
 	char	*p;
 
-	if (!s)
-		return (NULL);
 	p = (char *)s;
 	while (n > 0)
 	{

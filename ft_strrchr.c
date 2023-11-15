@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 02:31:49 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/06 18:19:29 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/14 18:53:38 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int				i;
-	unsigned char	char_to_find;
+	char			char_to_find;
 	char			*last_occurrence;
 
 	last_occurrence = NULL;
-	char_to_find = (unsigned char)c;
+	char_to_find = (char)c;
 	i = 0;
 	while (s[i] != '\0')
 	{

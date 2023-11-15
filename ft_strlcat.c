@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:52:57 by prossi            #+#    #+#             */
-/*   Updated: 2023/11/02 18:52:03 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/14 19:01:40 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	i;
 	size_t	j;
 
-	if (!dst || !src)
-		return (0);
 	i = 0;
 	j = 0;
+	if (!dst && size == 0)
+		return (ft_strlen(src));
 	while (dst[i] && i < size)
 		i++;
 	while (src[j] && (i + j + 1) < size)
@@ -32,3 +32,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst[i + j] = '\0';
 	return (i + ft_strlen(src));
 }
+
+// #include <stdio.h>
+// #include <string.h>
+// int main () {
+// 	char dst[] = "fads";
+// 	printf("%zu\n", ft_strlcat(NULL, NULL, 0));
+// 	printf("%zu\n", strlcat(NULL, NULL, 0));
+// }

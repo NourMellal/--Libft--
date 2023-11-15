@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:32:20 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/06 18:13:41 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/14 18:54:00 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	char_to_find;
+	char	char_to_find;
 
-	if (!s)
-		return (NULL);
-	char_to_find = (unsigned char)c;
+	char_to_find = (char)c;
 	while (*s)
 	{
 		if (*s == char_to_find)

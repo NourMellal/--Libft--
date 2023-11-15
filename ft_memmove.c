@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 01:17:51 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/04 16:53:05 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/14 18:44:17 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char		*tmp;
 	const unsigned char	*tmp2;
 
-	if (!dest || !src)
-		return (dest);
 	tmp = (unsigned char *)dest;
 	tmp2 = (const unsigned char *)src;
 	if (tmp == tmp2)

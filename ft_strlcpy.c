@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 18:04:44 by prossi            #+#    #+#             */
-/*   Updated: 2023/11/02 18:52:16 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/14 19:00:57 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 
-	if (!dest || !src)
-		return (0);
+	if (!dest && size == 0)
+		return (ft_strlen(src));
 	i = 0;
 	if (size == 0)
 	{
@@ -36,3 +36,12 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		i++;
 	return (i);
 }
+
+// #include <stdio.h>
+// #include <string.h>
+// int main ()
+// {
+// 	char dst[] = "";
+// 	printf("%zu\n", ft_strlcpy(dst, "hhh", 0));
+// 	printf("%zu\n", strlcpy(dst, "hhh", 0));
+// }

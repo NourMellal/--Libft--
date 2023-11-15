@@ -3,48 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/09 14:33:44 by prossi            #+#    #+#             */
-/*   Updated: 2023/11/07 22:32:58 by nmellal          ###   ########.fr       */
+/*   Created: 2021/11/04 12:54:04 by iel-mach          #+#    #+#             */
+/*   Updated: 2023/11/14 19:04:57 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *s)
 {
-	int	i;
-	int	neg;
-	int	res;
+	int				sign;
+	unsigned long	rus;
 
-	if (!str)
-		return (0);
-	i = 0;
-	neg = 1;
-	res = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	sign = 1;
+	rus = 0;
+	while (*s == 32 || (*s >= 7 && *s <= 13))
+		s++;
+	if (*s == '-' || *s == '+')
 	{
-		if (str[i] == '-')
-			neg *= -1;
-		i++;
+		if (*s == '-')
+			sign *= (-1);
+		s++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (*s >= '0' && *s <= '9')
 	{
-		res = (str[i] - '0') + (res * 10);
-		i++;
+		rus = (rus * 10) + (*s - 48);
+		if (rus > (~((size_t)0)) && sign == -1)
+			return (0);
+		else if (rus > (~((size_t)0)) && sign == 1)
+			return (-1);
+		s++;
 	}
-	return (res * neg);
+	return (sign * rus);
 }
-
-// int	main(void)
-// {
-// 	#include <stdio.h>
-// 	#include <limits.h>
-// 	int n = ft_atoi("-2147483649");
-// 	int n2 = atoi("-2147483649");
-// 	printf("%d\n", n);
-// 	printf("%d\n", n2);
-// }

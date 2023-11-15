@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 18:51:56 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/14 17:59:30 by nmellal          ###   ########.fr       */
+/*   Created: 2023/11/14 19:05:53 by nmellal           #+#    #+#             */
+/*   Updated: 2023/11/14 19:08:56 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
-void	ft_putstr_fd(char const *s, int fd)
+
+int main ()
 {
-	if (!s || fd < 0)
-		return ;
-	write(fd, s, ft_strlen(s));
+	printf("%ld\n",ft_strlcat("", "sas", 0));
+	printf("%ld\n", strlcat("", "sas", 0));
 }
