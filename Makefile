@@ -1,3 +1,5 @@
+.PHONY: all clean fclean bonus re
+
 SRC = ft_atoi.c\
 	ft_isalnum.c\
 	ft_itoa.c\
@@ -40,24 +42,23 @@ ft_lstclear.c      ft_lstlast.c    ft_lstsize.c
 OBJS =	${SRC:.c=.o}
 OBJS_BONUS =	${SRC_BONUS:.c=.o}
 
+AR = ar rcs
 
-CC =	gcc
-
-CFLAGS =	-Wall -Werror -Wextra
+CC =	cc
 
 ICNLUDES = libft.h
+
+CFLAGS =	-Wall -Werror -Wextra -I ${ICNLUDES}
 
 NAME = libft.a
 
 all : ${NAME}
 
-${NAME}:
-		${CC} ${CFLAGS} -c ${SRC}
-		ar rcs ${NAME} ${OBJS}
+${NAME}: ${OBJS}
+		${AR} ${NAME} ${OBJS}
 
-bonus:
-	${CC} ${CFLAGS} -c ${SRC_BONUS}
-	ar rcs ${NAME} ${OBJS_BONUS}
+bonus: ${OBJS_BONUS}
+	${AR} ${NAME} ${OBJS_BONUS}
 
 clean:
 	rm -rf ${OBJS} ${OBJS_BONUS}
@@ -67,4 +68,6 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean bonus
+$(OBJS_BONUS): %.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+

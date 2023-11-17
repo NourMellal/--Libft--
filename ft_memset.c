@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 02:58:27 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/14 18:39:57 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/17 18:03:47 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,16 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
+
+// #include <stdio.h>
+// #include <string.h>
+// int main ()
+// {
+// 	int a;
+// 	ft_memset(&a,0,4);
+// 	printf("%d\n", a);
+// 	ft_memset(&a,5,2);
+// 	printf("%d\n", a);
+// 	ft_memset(&a,57,1);
+// 	printf("%d\n", a);
+// }

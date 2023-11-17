@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 02:31:49 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/14 18:53:38 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/16 16:41:59 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,3 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (last_occurrence);
 }
-
-// int main(void)
-// {
-// 	char *t = ft_strrchr("hello lolo", 'z');
-// 	if (!t)
-// 		printf("(nil)\n");
-// 	else
-// 		printf("%s\n", t);
-// 	return (0);
-// }

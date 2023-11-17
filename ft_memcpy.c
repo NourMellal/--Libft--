@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 00:49:29 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/14 18:47:36 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/16 15:56:39 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+// #include <stdio.h>
+// #include <string.h>
+// int	main
+// (void)
+// {
+// 	// printf("%s\n", ft_memcpy("hello", "hh", 6));
+// 	printf("%s\n", memcpy("hello", NULL, 6));
+// }

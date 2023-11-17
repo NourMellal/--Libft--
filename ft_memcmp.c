@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 17:00:31 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/02 18:15:17 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/17 18:03:38 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,15 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-// int main(int ac, char **av)
+// #include <string.h>
+// #include <stdio.h>
+// int main
+// ()
 // {
-// 	(void)ac;
-// 	int r = ft_memcmp(av[1], NULL, 3);
-// 	int r2 = memcmp(av[1], NULL, 3);
-// 	printf("%d\n", r);
-// 	printf("%d\n", r2);
-// 	return (0);
+// 	char s1[] = "a";
+// 	char s2[] = "z";
+// 	printf("%d\n", ft_memcmp("a", "d", 1));
+// 	printf("%d\n", ft_memcmp(s1, s2, 1));
+// 	printf("%d\n", memcmp("a", "z", 1));
+// 	printf("%d\n", memcmp(s1, s2, 1));
 // }

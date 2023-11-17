@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 12:54:04 by iel-mach          #+#    #+#             */
-/*   Updated: 2023/11/14 19:04:57 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/17 18:24:06 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(const char *s)
 
 	sign = 1;
 	rus = 0;
-	while (*s == 32 || (*s >= 7 && *s <= 13))
+	while (*s == 32 || (*s >= 9 && *s <= 13))
 		s++;
 	if (*s == '-' || *s == '+')
 	{
@@ -38,3 +38,12 @@ int	ft_atoi(const char *s)
 	}
 	return (sign * rus);
 }
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <limits.h>
+
+// int main(void)
+// {
+// 	printf("%d\n", ft_atoi(ft_itoa(SIZE_MAX + 1)));
+// 	printf("%d\n", atoi(ft_itoa(SIZE_MAX + 1)));
+// }
