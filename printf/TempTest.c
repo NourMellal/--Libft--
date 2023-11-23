@@ -6,18 +6,37 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 22:36:54 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/22 05:27:33 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/24 00:12:39 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
-int	ft_printchar(int c)
-{
-	write(1, &c, 1);
-	return (1);
-}
+#include "printf.h"
+// #include <stdio.h>
+// #include <unistd.h>
+// int		ft_putnbr_fd(int n);
 
-int main(void) {
-	printf("%d\n", printf("%5d\n", 1));
-	return (0);
-}
+// int	ft_putchar(int c)
+// {
+// 	write(1, &c, 1);
+// 	return (1);
+// }
+
+// int		ft_putnbr(int n)
+// {
+// 	long	nb;
+
+// 	nb = n;
+// 	if (nb < 0)
+// 	{
+// 		nb = -nb;
+// 		ft_putchar('-');
+// 	}
+// 	if ((nb / 10) > 0)
+// 		return(1 + ft_putnbr(nb / 10));
+// 	ft_putchar(nb % 10 + 48);
+// }
+
+// int main(void) {
+// 	ft_printf("%s\n", "Hello");
+// 	return (0);
+// }
