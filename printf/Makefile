@@ -11,7 +11,7 @@ INCLUDES = -I printf.h
 CC = cc
 
 ${NAME}: ${OBJS}
-	ar rcs ${OBJS} ${NAME}
+	ar rcs ${NAME} ${OBJS}
 
 all: ${NAME}
 
