@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 22:12:59 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/25 21:09:48 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/25 23:36:37 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int	ft_putcharsingle(va_list args)
 {
-	char	c;
+	int	c;
 
 	c = va_arg(args, int);
-	write(1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
 
 int	ft_putstr(va_list args)

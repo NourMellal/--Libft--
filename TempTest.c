@@ -6,15 +6,16 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 22:36:54 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/25 21:10:06 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/25 23:49:12 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-// int main(void) {
-// 	char *s = "hello";
-// 	printf("dyalhom : %d\n",(int)-2147483648);
-// 	ft_printf("dyalna : %d\n",(int)-2147483648);
-// 	return (0);
-// }
+int main(void) {
+	char *s = "hello";
+	// printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+	ft_printf("%%hello%d\n", 50);
+	printf("%%hello%d\n", 50);
+	return (0);
+}
