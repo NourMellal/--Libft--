@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 23:17:56 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/25 23:53:19 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/26 00:06:42 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int	ft_putchar(int c)
 	return (1);
 }
 
-int ft_put37(va_list args)
-{
-	char c = va_arg(args, int);
-	ft_putchar(c);
-	return (1);
-}
+// int ft_put37(va_list args)
+// {
+// 	char c = va_arg(args, int);
+// 	ft_putchar(c);
+// 	return (1);
+// }

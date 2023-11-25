@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 22:33:07 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/25 23:41:27 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/26 00:05:03 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,15 @@ int	handle_format(const char *format, va_list args, t_printf *init)
 		{
 			i = 0;
 			format++;
-			while (i < 9 && init[i].fmt != *format)
-				i++;
-			if (i < 9)
-				res += init[i].f(args);
+			if (*format == '%')
+				res += write(1, format, 1);
+			else
+			{
+				while (i < 8 && init[i].fmt != *format)
+					i++;
+				if (i < 8)
+					res += init[i].f(args);
+			}
 		}
 		else
 		{
@@ -46,7 +51,7 @@ t_printf	*init_printf_array(const char *format)
 
 	if (!format)
 		return (NULL);
-	array = (t_printf *)malloc(sizeof(t_printf) * 9);
+	array = (t_printf *)malloc(sizeof(t_printf) * 8);
 	if (!array)
 		return (NULL);
 	array[0] = (t_printf){'c', ft_putcharsingle};
@@ -57,7 +62,6 @@ t_printf	*init_printf_array(const char *format)
 	array[5] = (t_printf){'u', ft_putnbr_unsigned};
 	array[6] = (t_printf){'x', ft_puthex_lower};
 	array[7] = (t_printf){'X', ft_puthex_upper};
-	array[8] = (t_printf){'%', ft_put37};
 	return (array);
 }
 
