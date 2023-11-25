@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 20:35:04 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/25 21:28:28 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/25 21:34:05 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_putaddr(va_list args)
 
     ptr = va_arg(args, void *);
     addr = (unsigned long)ptr;
-    count = 2; // For "0x"
+    count = 2;
     ft_mputstr("0x");
     if (addr == 0)
     {
