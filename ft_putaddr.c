@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 20:35:04 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/25 20:41:51 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/25 21:28:28 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,35 @@ static void	ft_mputstr(char *s)
 	}
 }
 
-static void	ft_puthex(unsigned long nbr)
+static int	ft_puthex_count(unsigned long nbr)
 {
-	char	*hex;
+    char	*hex;
+    int		count;
 
-	hex = "0123456789abcdef";
-	if (nbr >= 16)
-		ft_puthex(nbr / 16);
-	ft_putchar(hex[nbr % 16]);
+    count = 0;
+    hex = "0123456789abcdef";
+    if (nbr >= 16)
+        count += ft_puthex_count(nbr / 16);
+    ft_putchar(hex[nbr % 16]);
+    return (count + 1);
 }
 
 int	ft_putaddr(va_list args)
 {
-	void			*ptr;
-	unsigned long	addr;
+    void			*ptr;
+    unsigned long	addr;
+    int				count;
 
-	ptr = va_arg(args, void *);
-	addr = (unsigned long)ptr;
-	ft_mputstr("0x");
-	if (addr == 0)
-		ft_putchar('0');
-	else
-		ft_puthex(addr);
-	return (0);
+    ptr = va_arg(args, void *);
+    addr = (unsigned long)ptr;
+    count = 2; // For "0x"
+    ft_mputstr("0x");
+    if (addr == 0)
+    {
+        ft_putchar('0');
+        count++;
+    }
+    else
+        count += ft_puthex_count(addr);
+    return count;
 }
