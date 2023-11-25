@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 00:13:15 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/24 00:26:32 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/25 17:44:34 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <stdarg.h>
 # include <stdio.h>
-# include "libft/libft.h"
-
+# include <unistd.h>
+# include <stdlib.h>
 typedef struct s_printf
 {
 	char	fmt;

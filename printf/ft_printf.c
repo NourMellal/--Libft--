@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 22:33:07 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/24 00:28:39 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/25 17:45:04 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int	ft_printf(const char *format, ...)
 	int			res;
 
 	va_start(args, format);
+	res = 0;
 	init = init_printf_array(format);
 	if (!init)
 		return (-1);
