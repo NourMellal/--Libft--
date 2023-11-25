@@ -23,33 +23,33 @@ static void	ft_mputstr(char *s)
 
 static int	ft_puthex_count(unsigned long nbr)
 {
-    char	*hex;
-    int		count;
+	char	*hex;
+	int		count;
 
-    count = 0;
-    hex = "0123456789abcdef";
-    if (nbr >= 16)
-        count += ft_puthex_count(nbr / 16);
-    ft_putchar(hex[nbr % 16]);
-    return (count + 1);
+	count = 0;
+	hex = "0123456789abcdef";
+	if (nbr >= 16)
+		count += ft_puthex_count(nbr / 16);
+	ft_putchar(hex[nbr % 16]);
+	return (count + 1);
 }
 
 int	ft_putaddr(va_list args)
 {
-    void			*ptr;
-    unsigned long	addr;
-    int				count;
+	void			*ptr;
+	unsigned long	addr;
+	int				count;
 
-    ptr = va_arg(args, void *);
-    addr = (unsigned long)ptr;
-    count = 2;
-    ft_mputstr("0x");
-    if (addr == 0)
-    {
-        ft_putchar('0');
-        count++;
-    }
-    else
-        count += ft_puthex_count(addr);
-    return count;
+	ptr = va_arg(args, void *);
+	addr = (unsigned long)ptr;
+	count = 2;
+	ft_mputstr("0x");
+	if (addr == 0)
+	{
+		ft_putchar('0');
+		count++;
+	}
+	else
+		count += ft_puthex_count(addr);
+	return (count);
 }

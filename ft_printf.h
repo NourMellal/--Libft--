@@ -6,22 +6,22 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 00:13:15 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/26 00:06:51 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/26 00:26:38 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
 # include <stdlib.h>
+# include <unistd.h>
+
 typedef struct s_printf
 {
 	char	fmt;
 	int		(*f)(va_list);
-}				t_printf;
+}			t_printf;
 
 int			ft_printf(const char *format, ...);
 t_printf	*init_printf_array(const char *format);
@@ -35,7 +35,5 @@ int			ft_putcharsingle(va_list args);
 int			ft_putaddr(va_list args);
 int			ft_putchar(int c);
 // int			ft_put37(va_list args);
-
-
 
 #endif

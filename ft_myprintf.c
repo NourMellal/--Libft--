@@ -6,12 +6,11 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 22:33:07 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/26 00:05:03 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/26 00:24:30 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
 
 int	handle_format(const char *format, va_list args, t_printf *init)
 {
@@ -36,10 +35,7 @@ int	handle_format(const char *format, va_list args, t_printf *init)
 			}
 		}
 		else
-		{
-			write(1, format, 1);
-			res++;
-		}
+			res += write(1, format, 1);
 		format++;
 	}
 	return (res);
