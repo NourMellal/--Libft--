@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_myprintf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 22:33:07 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/25 17:45:04 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/25 20:37:24 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 t_printf	*init_printf_array(const char *format)
 {
@@ -25,7 +25,7 @@ t_printf	*init_printf_array(const char *format)
 	array[1] = (t_printf){'s', ft_putstr};
 	array[2] = (t_printf){'d', ft_putnbr};
 	array[3] = (t_printf){'i', ft_putnbr};
-	// array[4] = (t_printf){'p', ft_putptr};
+	array[4] = (t_printf){'p', ft_putaddr};
 	array[5] = (t_printf){'u', ft_putnbr_unsigned};
 	array[6] = (t_printf){'x', ft_puthex_lower};
 	array[7] = (t_printf){'X', ft_puthex_upper};
@@ -76,9 +76,4 @@ int	ft_printf(const char *format, ...)
 	free(init);
 	va_end(args);
 	return (res);
-}
-int main(void) {
-	int r = ft_printf("%s %s\n", "hi", "hellpo");
-	printf("%d\n", r);
-	return (0);
 }

@@ -6,11 +6,11 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 22:12:59 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/24 00:26:04 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/25 21:09:48 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putcharsingle(va_list args)
 {
@@ -39,7 +39,7 @@ int	ft_putstr(va_list args)
 
 int	ft_putnbr(va_list args)
 {
-	int		n;
+	long	n;
 	int		count;
 	char	num[12];
 	int		i;

@@ -1,4 +1,4 @@
-SRC	= ft_printf.c     ft_tools.c      ft_tools2.c
+SRC	= ft_myprintf.c     ft_tools.c      ft_tools2.c		ft_putaddr.c
 
 OBJS = ${SRC:.c=.o}
 

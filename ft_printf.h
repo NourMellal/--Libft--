@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 00:13:15 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/25 17:44:34 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/25 20:39:27 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,9 @@ int			ft_puthex_upper(va_list args);
 int			ft_puthex_lower(va_list args);
 int			ft_putnbr_unsigned(va_list args);
 int			ft_putcharsingle(va_list args);
+int			ft_putaddr(va_list args);
 int			ft_putchar(int c);
-int ft_put37(va_list args);
+int			ft_put37(va_list args);
 
 
 
