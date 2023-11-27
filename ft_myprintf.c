@@ -6,7 +6,7 @@
 /*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 22:33:07 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/26 00:24:30 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/11/27 21:46:22 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ t_printf	*init_printf_array(const char *format)
 {
 	t_printf	*array;
 
-	if (!format)
-		return (NULL);
 	array = (t_printf *)malloc(sizeof(t_printf) * 8);
 	if (!array)
 		return (NULL);
