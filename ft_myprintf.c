@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_myprintf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 22:33:07 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/27 21:46:22 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/12/04 11:54:08 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_printf	*init_printf_array(const char *format)
 	t_printf	*array;
 
 	array = (t_printf *)malloc(sizeof(t_printf) * 8);
-	if (!array)
+	if (!array || !format)
 		return (NULL);
 	array[0] = (t_printf){'c', ft_putcharsingle};
 	array[1] = (t_printf){'s', ft_putstr};

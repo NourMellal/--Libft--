@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putaddr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmellal <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nmellal <nmellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 20:35:04 by nmellal           #+#    #+#             */
-/*   Updated: 2023/11/25 21:34:05 by nmellal          ###   ########.fr       */
+/*   Updated: 2023/12/04 10:34:52 by nmellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,13 @@ int	ft_putaddr(va_list args)
 
 	ptr = va_arg(args, void *);
 	addr = (unsigned long)ptr;
-	count = 2;
-	ft_mputstr("0x");
+	count = 0;
 	if (addr == 0)
 	{
-		ft_putchar('0');
-		count++;
+		ft_mputstr("(nil)");
+		return (5);
 	}
-	else
-		count += ft_puthex_count(addr);
+	ft_mputstr("0x");
+	count += ft_puthex_count(addr) + 2;
 	return (count);
 }
